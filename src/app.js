@@ -1,7 +1,10 @@
 //Load in your dependencies and components
 import React from 'react';
 import ReactDom from 'react-dom';
+
+//components
 import Hello from './components/hello.js'
+//import Statefull from './components/statefull.js'
 
 
 
