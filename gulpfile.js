@@ -13,45 +13,47 @@ const concat = require('gulp-concat');
 const historyApiFallback = require('connect-history-api-fallback');
 
 gulp.task('js', () => {
-browserify('src/app.js', {debug: true})
+	browserify('clientSide/src/app.js', { debug: true })
 		.transform('babelify', {
 			sourceMaps: true,
 			presets: ['es2015', 'react']
 		})
 		.bundle()
-		.on('error', notify.onError({
-			message: "Error: <%= error.message %>",
-			title: 'Error in JS 💀'
-		}))
+		.on(
+			'error',
+			notify.onError({
+				message: 'Error: <%= error.message %>',
+				title: 'Error in JS 💀'
+			})
+		)
 		.pipe(source('app.js'))
 		.pipe(buffer())
-		.pipe(gulp.dest('public/'))
-		.pipe(reload({
-			stream: true
-		}));
+		.pipe(gulp.dest('clientSide/public/'))
+		.pipe(
+			reload({
+				stream: true
+			})
+		);
 });
 
 gulp.task('bs', () => {
 	browserSync.init({
-		server: {
-			baseDir: './',
-		middleware: [historyApiFallback()]
-		},
+		proxy: 'localhost:8080'
 	});
 });
 
 gulp.task('css', () => {
-	return gulp.src('./src/**/*.scss') // '**' any folder inside of, '*' any file with the extension of .scss
+	return gulp
+		.src('./clientSide/src/**/*.scss') // '**' any folder inside of, '*' any file with the extension of .scss
 		.pipe(sass().on('error', sass.logError)) // on Error display message: 'error'
 		.pipe(autoprefixer())
 		.pipe(concat('styles.css'))
-		.pipe(gulp.dest('./public'))
-		.pipe(reload({stream: true}));
+		.pipe(gulp.dest('./clientSide/public'))
+		.pipe(reload({ stream: true }));
 });
 
-
-gulp.task('default', [ 'css','js', 'bs'], () => {
-	gulp.watch('src/**/*.js', ['js']);
-	gulp.watch('./src/**/*.scss', ['css']);
-	gulp.watch('./public/style.css', reload);
+gulp.task('default', ['css', 'js', 'bs'], () => {
+	gulp.watch('clientSide/src/**/*.js', ['js']);
+	gulp.watch('./clientSide/src/**/*.scss', ['css']);
+	gulp.watch('./clientSide/public/style.css', reload);
 });
