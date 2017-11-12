@@ -29,9 +29,11 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.2",
     "concurrently": "^3.5.0",
     "express": "^4.16.2",
     "firebase": "^3.7.2",
+    "mongoose": "^4.13.1",
     "react": "^15.6.1"
   },
   "repository": {

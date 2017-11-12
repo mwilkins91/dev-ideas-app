@@ -10,7 +10,7 @@ class App extends React.Component {
 		};
 	}
 	render() {
-		return <p>{JSON.stringify(this.state.tests)}</p>;
+		return <p>{this.state.tests.greeting}</p>;
 	}
 	componentDidMount() {
 		fetch('/api/tests')
