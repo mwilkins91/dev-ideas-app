@@ -42,7 +42,7 @@ class App extends React.Component {
 								path="/needAnIdea"
 								render={props => <NeedIdea projects={this.state.projects} {...props} />}
 							/>
-							<Route path="/haveAnIdea" render={props => <HaveIdea />} />
+							<Route path="/haveAnIdea" render={props => <HaveIdea refreshProjects={this.getProjects}/>} />
 						</div>
 						<Footer />
 					</div>

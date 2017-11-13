@@ -33,13 +33,9 @@ router.get('/api/projects', async (req, res) => {
 router.post('/api/projects', async (req, res) => {
 	try {
 		const newProjectBase = new models.Projects();
-		const newProject = Object.assign(newProjectBase, {
-			projectName: 'Another Test',
-			language: 'Javascript: React',
-			description: 'This is the description, but moreeeeeeeee!'
-		});
+		const newProject = Object.assign(newProjectBase, req.body);
 		let response = await newProject.save();
-		res.send(response);
+		res.json(response);
 	} catch (err) {
 		console.error(err);
 		res.status(500);

@@ -8,7 +8,7 @@ export default class HaveIdea extends React.Component {
 			<div className="haveIdeaPage mainPageElement">
 				<div className="columns">
 					<div className="column">
-						<IdeaForm />
+						<IdeaForm refreshProjects={this.props.refreshProjects}/>
 					</div>
 					<div className="column">
 						<IdeaPreview />

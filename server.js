@@ -22,6 +22,10 @@ mongoose
 //serve static files
 app.use(express.static('clientSide/public'));
 
+//handle posted data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 //import routes
 app.use('/', routes);
 
