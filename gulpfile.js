@@ -53,7 +53,8 @@ gulp.task('css', () => {
 });
 
 gulp.task('default', ['css', 'js', 'bs'], () => {
-	gulp.watch('clientSide/src/**/*.js', ['js']);
+	gulp.watch('./clientSide/src/*.js', ['js']);
+	gulp.watch('./clientSide/src/**/*.js', ['js']);
 	gulp.watch('./clientSide/src/**/*.scss', ['css']);
 	gulp.watch('./clientSide/public/style.css', reload);
 });

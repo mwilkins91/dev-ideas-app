@@ -22,7 +22,8 @@ router.get('/api/projects', async (req, res) => {
 		const projects = await models.Projects.find();
 		res.send(projects);
 	} catch (err) {
-		console.error(err);
+		res.status(500);
+		res.json(err);
 	}
 });
 
@@ -41,6 +42,8 @@ router.post('/api/projects', async (req, res) => {
 		res.send(response);
 	} catch (err) {
 		console.error(err);
+		res.status(500);
+		res.json(err);
 	}
 });
 
@@ -129,6 +132,10 @@ router.put('/api/projects/', (req, res) => {
 		error:
 			'you must include a project ID in your request! (EX: /api/projects/123 ).'
 	});
+});
+
+router.get('*', (req, res) => {
+	res.sendFile(resolve(__dirname, '..', 'clientSide', 'index.html'));
 });
 
 module.exports = router;

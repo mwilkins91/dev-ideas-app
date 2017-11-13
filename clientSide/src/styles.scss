@@ -1,5 +1,29 @@
+@import 'partials/normalize';
 @import 'partials/variables';
+@import '../../node_modules/bulma/bulma';
+@import 'partials/mainNav';
+@import 'partials/footer';
+@import 'partials/homepage';
+@import 'partials/projectCell';
 
-body {
-	background: forestgreen;
+.needIdeaPage  {
+	margin-top: 24px;
+}
+
+.fixedSize {
+	display: inline-block;
+	min-width: 110px;
+	text-align: center;
+}
+
+.nostyle {
+	list-style: none;
+}
+
+.needIdeaPage .projectSums .card {
+	margin-bottom: 16px;
+}
+
+.needIdeaPage>.columns {
+	margin: 0 16px;
 }
