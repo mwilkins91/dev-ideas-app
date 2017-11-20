@@ -5,6 +5,9 @@
 @import 'partials/footer';
 @import 'partials/homepage';
 @import 'partials/projectCell';
+@import 'partials/projectIdeaViews';
+@import 'partials/newIdeaForm';
+@import 'partials/languageColors';
 
 .needIdeaPage  {
 	margin-top: 24px;
@@ -26,4 +29,29 @@
 
 .needIdeaPage>.columns {
 	margin: 0 16px;
+}
+
+.indentedText,
+.preview.content .indentedText {
+	text-indent: 20px;
+	margin-top: 0
+}
+
+.fade {
+	transition: opacity 0.3s ease-out;
+	opacity: 0;
+}
+
+.fadeIn {
+	opacity: 1;
+}
+
+.language {
+	display: inline-block;
+	box-shadow: 0 2px 3px rgba(1, 1, 1, 0.1), 0 0 0 1px rgba(1, 1, 1, 0.1);
+	padding: 0;
+	border-radius: 5px;
+	min-width: 100px;
+	text-align: center;
+	margin: 4px 8px;
 }

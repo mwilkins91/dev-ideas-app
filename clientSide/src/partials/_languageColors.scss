@@ -1,0 +1,131 @@
+.language.none {
+    $color: grey;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.react {
+    $color: #00d9ff;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.php {
+    $color: #767ab3;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.javascript,
+.language.java-script {
+    $color: #f7df1f;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.cPlusPlus {
+    $color: #a8b9cb;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.python {
+    $color: #356d9e;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.ruby,
+.language.rails,
+.language.ruby-on-rails {
+    $color: #d34231;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.jquery {
+    $color: #1069ae;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+
+.language.java {
+    $color: #f8971d;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.css {
+    $color: #379ad7;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.sass,
+.language.scss {
+    $color: #cd669a;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.less {
+    $color: #1f416f;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.cSharp {
+    $color: #05930c;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.c {
+    $color: black;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.go {
+    $color: #73cddd;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+
+.language.typescript,
+.language.type-script {
+    $color: #017acc;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.shell,
+.language.bash {
+    $color: #320f32;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.swift {
+    $color: #ec4547;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+
+
+.language.scala {
+    $color: #c01b03;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+
+
+.language.objective-c {
+    $color: #4a4a4a;
+    background: $color;
+    color: findColorInvert($color);
+}

@@ -1,0 +1,16 @@
+.mainPageElement .control {
+    .control__tooltip {
+        display: none;
+        position: absolute;
+        background: white;
+        height: unset;
+        z-index: 5000;
+        padding: 0.5rem;
+    }
+    input:focus+.control__tooltip {
+        display: block;
+    }
+    textarea:focus+.control__tooltip {
+        display: block;
+    }
+}
