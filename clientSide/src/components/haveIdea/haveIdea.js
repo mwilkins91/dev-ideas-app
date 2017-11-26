@@ -7,12 +7,32 @@ export default class HaveIdea extends React.Component {
 		super();
 		this.state = {
 			projectName: '',
-			languages: '',
+			languages: ['none'],
+			languagesString: '',
 			description: '',
-			userStory: ''
+			userStory: '',
+			stack: ''
 		};
+		this.initialState = Object.assign({}, this.state);
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleRadioChange = this.handleRadioChange.bind(this);
+		this.handleLanguageChange = this.handleLanguageChange.bind(this);
+	}
+	handleLanguageChange(e) {
+		let languageArray = e.target.value
+			.split(',')
+			.map(language => language.trim())
+			.filter(language => language.length > 0);
+
+		if (languageArray.length <= 0) {
+			languageArray = ['none'];
+		}
+
+		this.setState({
+			languages: languageArray,
+			languagesString: e.target.value
+		});
 	}
 	handleChange(e) {
 		this.setState({
@@ -32,13 +52,13 @@ export default class HaveIdea extends React.Component {
 			.then(json => {
 				console.log(json);
 				this.props.refreshProjects();
-				this.setState({
-					projectName: '',
-					languages: '',
-					description: '',
-					userStory: ''
-				});
+				this.setState(this.initialState);
 			});
+	}
+	handleRadioChange(e) {
+		this.setState({
+			[e.target.name]: e.target.value
+		});
 	}
 	render() {
 		return (
@@ -48,6 +68,8 @@ export default class HaveIdea extends React.Component {
 						<IdeaForm
 							handleChange={this.handleChange}
 							handleSubmit={this.handleSubmit}
+							handleRadioChange={this.handleRadioChange}
+							handleLanguageChange={this.handleLanguageChange}
 							refreshProjects={this.props.refreshProjects}
 							{...this.state}
 						/>

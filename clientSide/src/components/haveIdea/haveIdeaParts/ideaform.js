@@ -19,10 +19,44 @@ export default function IdeaForm(props) {
 					/>
 				</div>
 			</div>
-
+			<div className="field">
+				<p className="label"> Project Scope</p>
+				<div className="control evenlySpaced">
+					<label htmlFor="frontEnd" className="radio">
+						<input
+							onChange={props.handleRadioChange}
+							id="frontEnd"
+							value="frontEnd"
+							type="radio"
+							name="stack"
+						/>
+						Front-End Only
+					</label>
+					<label htmlFor="backEnd" className="radio">
+						<input
+							onChange={props.handleRadioChange}
+							id="backEnd"
+							value="backEnd"
+							type="radio"
+							name="stack"
+						/>
+						Back-End Only
+					</label>
+					<label htmlFor="fullStack" className="radio">
+						<input
+							onChange={props.handleRadioChange}
+							id="fullStack"
+							value="fullStack"
+							type="radio"
+							name="stack"
+						/>
+						Full Stack
+					</label>
+				</div>
+			</div>
 			<div className="field">
 				<label htmlFor="languages" className="label">
-					Language
+					Languages, Libraries, and tools
 				</label>
 				<div className="control has-icons-left">
 					<input
@@ -32,8 +66,8 @@ export default function IdeaForm(props) {
 						className="input"
 						type="text"
 						placeholder="Javascript, React"
-						onChange={props.handleChange}
-						value={props.languages}
+						onChange={props.handleLanguageChange}
+						value={props.languagesString}
 					/>
 					<div className="control__tooltip box">
 						<p>Add a comma to seperate languages</p>

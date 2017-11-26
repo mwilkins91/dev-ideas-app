@@ -8,8 +8,7 @@
 @import 'partials/projectIdeaViews';
 @import 'partials/newIdeaForm';
 @import 'partials/languageColors';
-
-.needIdeaPage  {
+.needIdeaPage {
 	margin-top: 24px;
 }
 
@@ -21,6 +20,110 @@
 
 .nostyle {
 	list-style: none;
+}
+
+.button.getStarted {
+	margin: 0 auto;
+	display: block;
+	padding: 16px;
+	font-size: 1.6rem;
+	height: unset;
+	a {
+		color: white;
+	}
+}
+
+.projectDetails {
+	position: relative;
+}
+#previewCard {
+	transition: top 0.2s;
+	@media all and (min-width: 789px){
+		max-height: 90vh;
+		overflow-y: scroll;
+	}
+}
+.ideaCard {
+	background: transparent;
+	transition: transform 0.1s ease-in-out;
+	.language {
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+		transition-delay: 0.5s;
+	}
+	.card-header {
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+	}
+	.tag {
+		transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		transition-delay: 0.5s;
+		border: 2px solid transparent;
+	}
+}
+.ideaCard .card-content,
+.ideaCard .card-header-title{
+	position: relative;
+	background: transparent;
+	overflow-x: hidden;
+	transition: color 0.3s ease-in-out;
+	p {
+		background: transparent;
+	}
+	&:before {
+		position: absolute;
+		right: 100%;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		content: '';
+		transition: right 0.3s ease-in-out;
+		transition-delay: 0.1s;
+		z-index: -1;
+	}
+}
+$cardHeaderTitleSelectedColor: #00947e;
+$cardContentSelectedColor: #f4fffd;
+.ideaCard.currentlySelected .card-header-title {
+	color: findColorInvert($cardHeaderTitleSelectedColor);
+}
+.ideaCard.currentlySelected .card-content {
+	color: findColorInvert($cardContentSelectedColor);
+}
+.ideaCard.currentlySelected .tag {
+	background: white;
+	border-color: rgb(44, 41, 41);
+}
+.ideaCard .card-header-title:before {
+	background: $cardHeaderTitleSelectedColor;
+}
+.ideaCard .card-content:before {
+	background: $cardContentSelectedColor;
+}
+.ideaCard.currentlySelected .card-content:before,
+.ideaCard.currentlySelected .card-header-title:before {
+	right: 0;
+}
+
+.ideaCard:hover {
+	cursor: pointer;
+}
+
+.ideaCard:not(.currentlySelected) {
+	&:hover {
+		transform: scale(1.01);
+		.card-header {
+			background: rgba(1,147,126,0.08);
+		}
+		
+	}
+	.language {
+		background: white;
+		color: black;
+	}
+}
+
+
+.needIdeaPage {
+	margin-bottom: 100px;
 }
 
 .needIdeaPage .projectSums .card {
@@ -54,4 +157,27 @@
 	min-width: 100px;
 	text-align: center;
 	margin: 4px 8px;
+}
+
+.evenlySpaced {
+	display: flex;
+	justify-content: space-around;
+	&>div.projectIdeaViewSection {
+		margin: 0;
+		* {
+			text-align: center;
+		}
+	}
+}
+
+label.radio input[type="radio"] {
+	margin: 0 5px 0 0;
+}
+
+.titleCase {
+	text-transform: capitalize;
+}
+
+.noscroll {
+	overflow: hidden;
 }

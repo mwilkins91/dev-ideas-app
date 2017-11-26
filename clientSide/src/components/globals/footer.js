@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer() {
 	return (
-		<footer className="footer">
+		<footer id="mainFooter" className="footer">
 			<div className="container">
 				<div className="content has-text-centered">
 					<p>

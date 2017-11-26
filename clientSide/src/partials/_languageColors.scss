@@ -129,3 +129,45 @@
     background: $color;
     color: findColorInvert($color);
 }
+
+.language.node,
+.language.nodejs {
+    $color: #81BB1E;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.express,
+.language.expressjs {
+    $color: #9f8cda;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.mongo,
+.language.mongodb {
+    $color: #599732;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.sql,
+.language.mysql {
+    $color: #E48D1D;
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.html,
+.language.hypertextmarkuplanguage {
+    $color: rgba(198, 8, 8, 0.703);
+    background: $color;
+    color: findColorInvert($color);
+}
+
+.language.angular,
+.language.angular2 {
+    $color: #dd0331;
+    background: $color;
+    color: findColorInvert($color);
+}

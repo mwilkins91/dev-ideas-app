@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 module.exports = new mongoose.Schema({
 	projectName: String,
-	language: String,
+	languages: [String],
 	description: String,
-	userStory: String
+	userStory: String,
+	stack: String
 });
